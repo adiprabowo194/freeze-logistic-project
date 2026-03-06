@@ -52,9 +52,9 @@ export default function Home() {
             Login
           </button>
         </div>
-        <div className="hero-image py-0 md:max-w-6xl w-full  relative min-h-60 mx-auto">
+        <div className="hero-image py-0 md:max-w-5xl w-full  relative min-h-60 mx-auto">
           <p
-            className="md:absolute md:top-10 relative top-40 md:left-1/2 
+            className="md:absolute md:top-8 top-2 relative  md:left-1/2 
                 md:-translate-x-1/2 md:-translate-y-1/2 
                 text-center text-gray-500 md:text-base text-xs "
           >

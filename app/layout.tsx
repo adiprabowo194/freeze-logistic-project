@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${fontPoppins.className} antialiased`}>
+      <body className={`${fontPoppins.className} `}>
         <Navbar />
         <>{children}</>
       </body>

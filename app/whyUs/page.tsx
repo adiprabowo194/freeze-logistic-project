@@ -158,10 +158,10 @@ export default function Home() {
               </h3>
               <p className="py-2 px-4 md:px-2 md:text-sm text-xs text-gray-600 md:w-3/4 w-full">
                 We understand your challenges{" "}
-                <div>
+                <span className="block">
                   because we've faced them too. This platform was built for
                   people like us.
-                </div>
+                </span>
               </p>
             </div>
             <div className="flex flex-col text-center items-center md:py-8 py-4 w-full md:w-1/3">

@@ -93,20 +93,20 @@ export default function Home() {
       bg-[linear-gradient(61deg,#0D1A2A_0%,#0F253C_66%,#17374E_100%)]"
       >
         <div className="w-6/7 mx-auto">
-          <h2 className="md:text-4xl text-3xl font-bold tracking-wide mb-6 px-4 md:px-16 text-white">
+          {/* <h2 className="md:text-4xl text-3xl font-bold tracking-wide mb-6 px-4 md:px-16 text-white">
             Mision & Vision
-          </h2>
-          <div className="grid grid-cols-2 gap-4 md:gap-8 w-full py-6 px-4 md:px-16 mx-auto pb-8 md:pb-16 container ">
+          </h2> */}
+          <div className="grid md:grid-cols-2 grid-cols-1 gap-4 md:gap-8 w-full py-6 px-4 md:px-16 mx-auto pb-8 md:pb-16 container ">
             <div className="border border-gray-200 rounded-2xl ">
               <div className="flex flex-col  py-8 text-white px-6">
                 <FontAwesomeIcon
                   icon={faBullseye}
-                  className="text-2xl md:text-4xl text-blue-400 rounded-xl "
+                  className="text-2xl md:text-4xl text-blue-400 rounded-xl md:px-4 px-0"
                 />
-                <h3 className="font-bold md:text-2xl/tight text-xs py-4 md:max-w-3xl w-full   tracking-widest  ">
+                <h3 className="font-bold md:text-2xl/tight text-base py-4 md:max-w-3xl w-full tracking-widest md:px-4 px-0">
                   Our Mission
                 </h3>
-                <p className="px-4 md:px-0 md:text-sm text-xs">
+                <p className="md:px-4 px-0  md:text-sm text-xs tracking-widest ">
                   To democratize cold freight logistics for Australian SMBs by
                   providing instant access to real-time pricing, transparent
                   carrier options, and seamless booking—all in one technology
@@ -118,12 +118,12 @@ export default function Home() {
               <div className="flex flex-col  py-8 text-white px-6">
                 <FontAwesomeIcon
                   icon={faGlobe}
-                  className="text-2xl md:text-4xl text-blue-400 rounded-xl "
+                  className="text-2xl md:text-4xl text-blue-400 rounded-xl md:px-4 px-0"
                 />
-                <h3 className="font-bold md:text-2xl/tight text-xs py-4 md:max-w-3xl w-full   tracking-widest  ">
+                <h3 className="font-bold md:text-2xl/tight text-base py-4 md:max-w-3xl w-full tracking-widest md:px-4 px-0">
                   Our Vision
                 </h3>
-                <p className="px-4 md:px-0 md:text-sm text-xs">
+                <p className="md:px-4 px-0  md:text-sm text-xs tracking-widest ">
                   To become Australia's most trusted and comprehensive cold
                   freight platform, connecting every business with reliable,
                   affordable temperature-controlled shipping across the entire
@@ -138,14 +138,17 @@ export default function Home() {
         <div className="w-7/8 mx-auto">
           <div className="box-content md:py-2 py-0">
             <h2 className="md:text-3xl/tight text-4xl/tight font-bold text-center tracking-widest">
-              Why Australian Businesses Trust Us
+              Why Australian{" "}
+              <div className="bg-[linear-gradient(90deg,#4267D7_32%,#3ACDFF_100%)] bg-clip-text text-transparent inline-block">
+                Businesses Trust Us
+              </div>
             </h2>
             <p className="md:text-base/tight text-sm text-center mx-auto py-6">
               We're not just a platform—we're your cold freight partner
             </p>
           </div>
-          <div className="flex items-center justify-center md:pb-8 pb-4 gap-4">
-            <div className="flex flex-col text-center items-center md:py-8 py-4 w-1/3">
+          <div className="md:flex grid md:flex-row grid-cols-1 items-center justify-center md:pb-8 pb-4 gap-4">
+            <div className="flex flex-col text-center items-center md:py-8 py-4 w-full md:w-1/3">
               <FontAwesomeIcon
                 icon={faUsers}
                 className="text-2xl md:text-4xl text-blue-400 p-4 bg-blue-100 rounded-2xl "
@@ -161,7 +164,7 @@ export default function Home() {
                 </div>
               </p>
             </div>
-            <div className="flex flex-col text-center items-center md:py-8 py-4 w-1/3">
+            <div className="flex flex-col text-center items-center md:py-8 py-4 w-full md:w-1/3">
               <FontAwesomeIcon
                 icon={faShieldHalved}
                 className="text-2xl md:text-4xl text-green-400 p-4 bg-green-100 bg-grey-100 rounded-2xl "
@@ -174,7 +177,7 @@ export default function Home() {
                 and building a network that serves our community.
               </p>
             </div>
-            <div className="flex flex-col text-center items-center md:py-8 py-4 w-1/3">
+            <div className="flex flex-col text-center items-center md:py-8 py-4 w-full md:w-1/3">
               <FontAwesomeIcon
                 icon={faHeart}
                 className="text-2xl md:text-4xl text-red-400 p-4 bg-red-100 rounded-2xl"
@@ -191,11 +194,11 @@ export default function Home() {
         </div>
       </section>
       <section className="HowItWorks items-center w-full md:px-8 py-16 container-full mx-auto bg-[#4267D7] ">
-        <h1 className="md:text-5xl/tight text-4xl/tight font-bold text-center  px-2 md:px-8">
+        <h2 className="md:text-5xl/tight text-4xl/tight font-bold text-center  md:w-full max-w-2/3 mx-auto">
           <div className="text-white">Ready to Freeze Your</div>
           <div className="text-white">Cost ?</div>
-        </h1>
-        <h3 className="md:text-base/tight text-sm py-6  text-center max-w-1/3 mx-auto text-white">
+        </h2>
+        <h3 className="md:text-base/tight text-sm py-6  text-center md:w-full max-w-1/3 mx-auto text-white tracking-widest">
           join hundreds of Australian Businesses already saving time and money
           on cold freight
         </h3>

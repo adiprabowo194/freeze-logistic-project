@@ -78,12 +78,12 @@ export default function Home() {
           </div>
 
           {/* Image */}
-          <div className="flex justify-center md:justify-end">
+          <div className="flex justify-center md:justify-end ">
             <Image
               src={DataImage.DriverMan}
               alt="Driver Freeze Logistics"
               priority
-              className="rounded-xl shadow-lg object-cover"
+              className="rounded-4xl hover:shadow-lg object-cover border-4 border-white"
             />
           </div>
         </div>
@@ -97,11 +97,11 @@ export default function Home() {
             Mision & Vision
           </h2> */}
           <div className="grid md:grid-cols-2 grid-cols-1 gap-4 md:gap-8 w-full py-6 px-4 md:px-16 mx-auto pb-8 md:pb-16 container ">
-            <div className="border border-gray-200 rounded-2xl ">
+            <div className="border border-gray-200 rounded-2xl hover:bg-[#4267D7] group transition-colors duration-300 hover:shadow-lg">
               <div className="flex flex-col  py-8 text-white px-6">
                 <FontAwesomeIcon
                   icon={faBullseye}
-                  className="text-2xl md:text-4xl text-blue-400 rounded-xl md:px-4 px-0"
+                  className="text-2xl md:text-4xl text-blue-400 rounded-xl md:px-4 px-0 group-hover:text-white transition-colors"
                 />
                 <h3 className="font-bold md:text-2xl/tight text-base py-4 md:max-w-3xl w-full tracking-widest md:px-4 px-0">
                   Our Mission
@@ -114,11 +114,11 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="border border-gray-200 rounded-2xl ">
+            <div className="border border-gray-200 rounded-2xl hover:bg-[#4267D7] group transition-colors duration-300 hover:shadow-lg">
               <div className="flex flex-col  py-8 text-white px-6">
                 <FontAwesomeIcon
                   icon={faGlobe}
-                  className="text-2xl md:text-4xl text-blue-400 rounded-xl md:px-4 px-0"
+                  className="text-2xl md:text-4xl text-blue-400 rounded-xl md:px-4 px-0 group-hover:text-white transition-colors"
                 />
                 <h3 className="font-bold md:text-2xl/tight text-base py-4 md:max-w-3xl w-full tracking-widest md:px-4 px-0">
                   Our Vision
@@ -148,7 +148,7 @@ export default function Home() {
             </p>
           </div>
           <div className="md:flex grid md:flex-row grid-cols-1 items-center justify-center md:pb-8 pb-4 gap-4">
-            <div className="flex flex-col text-center items-center md:py-8 py-4 w-full md:w-1/3">
+            <div className="flex flex-col text-center items-center md:py-8 py-4 w-full md:w-1/3 hover:shadow-lg hover:rounded-4xl">
               <FontAwesomeIcon
                 icon={faUsers}
                 className="text-2xl md:text-4xl text-blue-400 p-4 bg-blue-100 rounded-2xl "
@@ -164,7 +164,7 @@ export default function Home() {
                 </span>
               </p>
             </div>
-            <div className="flex flex-col text-center items-center md:py-8 py-4 w-full md:w-1/3">
+            <div className="flex flex-col text-center items-center md:py-8 py-4 w-full md:w-1/3 hover:shadow-lg hover:rounded-4xl ">
               <FontAwesomeIcon
                 icon={faShieldHalved}
                 className="text-2xl md:text-4xl text-green-400 p-4 bg-green-100 bg-grey-100 rounded-2xl "
@@ -177,7 +177,7 @@ export default function Home() {
                 and building a network that serves our community.
               </p>
             </div>
-            <div className="flex flex-col text-center items-center md:py-8 py-4 w-full md:w-1/3">
+            <div className="flex flex-col text-center items-center md:py-8 py-4 w-full md:w-1/3 hover:shadow-lg hover:rounded-4xl">
               <FontAwesomeIcon
                 icon={faHeart}
                 className="text-2xl md:text-4xl text-red-400 p-4 bg-red-100 rounded-2xl"
@@ -203,14 +203,14 @@ export default function Home() {
           on cold freight
         </h3>
         <div className="hero-button flex flex-row  md:gap-8 gap-2 py-4 justify-center">
-          <button className="bg-white px-6 py-2 rounded-2xl md:w-60 w-40  md:text-base text-xs">
+          <button className="bg-white px-6 py-2 rounded-2xl md:w-60 w-40  md:text-base text-xs hover:bg-[#0F253C] hover:text-white">
             Create Free Login
           </button>
-          <button className="bg-blue-300 text-white px-6 py-2 rounded-2xl md:w-40 w-30 md:text-base text-xs">
+          <button className="bg-blue-300 text-white px-6 py-2 rounded-2xl md:w-40 w-30 md:text-base text-xs hover:bg-[#0F253C] ">
             Login
           </button>
         </div>
-        <p className="py-8 text-center text-gray-100 md:text-base text-xs ">
+        <p className="py-8 text-center text-gray-100 md:text-base text-xs hover:text-[#0F253C]">
           No credit card required
         </p>
       </section>

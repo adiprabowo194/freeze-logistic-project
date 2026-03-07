@@ -45,10 +45,10 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-button flex flex-row  md:gap-8 gap-2 py-4 justify-center">
-          <button className="bg-blue-500 px-6 py-2 rounded-2xl md:w-60 w-40 text-white md:text-base text-xs">
+          <button className="bg-blue-500 px-6 py-2 rounded-2xl md:w-60 w-40 text-white md:text-base text-xs hover:bg-[#0F253C]">
             Create Free Login
           </button>
-          <button className="border border-gray-950 px-6 py-2 rounded-2xl md:w-40 w-30 md:text-base text-xs">
+          <button className="border border-gray-950 px-6 py-2 rounded-2xl md:w-40 w-30 md:text-base text-xs hover:bg-[#0F253C] hover:text-white">
             Login
           </button>
         </div>
@@ -56,7 +56,7 @@ export default function Home() {
           <p
             className="md:absolute md:top-8 top-2 relative  md:left-1/2 
                 md:-translate-x-1/2 md:-translate-y-1/2 
-                text-center text-gray-500 md:text-base text-xs "
+                text-center text-gray-500 md:text-base text-xs hover:text-[#0F253C]"
           >
             No credit card required
           </p>
@@ -68,7 +68,7 @@ export default function Home() {
         </div>
       </section>
       <section className="AnyTemperature flex flex-col items-center w-full md:px-8 py-16 container mx-auto">
-        <div className="box-content py-2 ">
+        <div className="box-content py-2">
           <h2 className="md:text-3xl/tight text-4xl/tight font-bold text-center tracking-widest">
             Ship Any Temperature,
             <span className="pl-2 md:inline block text-blue-500">Any Time</span>
@@ -81,7 +81,7 @@ export default function Home() {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-full px-6 md:px-16  pb-8 md:pb-16">
-          <div className="border border-gray-200 rounded-2xl md:py-4 py-8 px-8  flex">
+          <div className="border border-gray-200 rounded-2xl md:py-4 py-8 px-8  flex hover:shadow-lg">
             <div className="flex flex-col">
               <i className="ri-box-3-line text-3xl text-red-600 bg-red-100 p-2 rounded-xl w-fit"></i>
               <h3 className="font-bold text-gray-600 md:text-lg text-base pt-3">
@@ -94,7 +94,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="border border-gray-200 rounded-2xl md:py-4 py-8 px-8 flex">
+          <div className="border border-gray-200 rounded-2xl md:py-4 py-8 px-8 flex hover:shadow-lg">
             <div className="flex flex-col">
               <i className="ri-temp-cold-line text-3xl text-blue-400 bg-blue-100 p-2 rounded-xl w-fit"></i>
               <h3 className="font-bold text-gray-600 md:text-lg text-base pt-3">
@@ -107,7 +107,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="border border-gray-200 rounded-2xl md:py-4 py-8 px-8 flex">
+          <div className="border border-gray-200 rounded-2xl md:py-4 py-8 px-8 flex hover:shadow-lg">
             <div className="flex flex-col">
               <i className="ri-snowflake-line text-3xl text-blue-600 bg-blue-200 p-2 rounded-xl w-fit"></i>
               <h3 className="font-bold text-gray-600 md:text-lg text-base pt-3">
@@ -124,7 +124,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="WhyLove w-full md:px-8 py-16 container-full mx-auto bg-[linear-gradient(61deg,#0D1A2A_0%,#0F253C_66%,#17374E_100%)]">
+      <section className="WhyLove w-full md:px-8 py-16 container-full  bg-[linear-gradient(61deg,#0D1A2A_0%,#0F253C_66%,#17374E_100%)]">
         <div className="w-7/8 mx-auto">
           <div className="box-content  pt-8 py-2 px-2 md:px-4">
             <h2 className="md:text-3xl/tight text-4xl/tight font-bold text-center tracking-widest text-white">
@@ -141,81 +141,83 @@ export default function Home() {
             </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 w-full py-2 px-2  md:px-16 mx-auto pb-8 md:pb-16">
-            <div className="border border-gray-200 rounded-2xl ">
-              <div className="flex flex-col text-center items-center py-4 text-gray-600">
+            <div className="border border-gray-200 rounded-2xl hover:bg-[#4267D7] group transition-colors duration-300 hover:shadow-lg">
+              <div className="flex flex-col text-center items-center py-4 text-white transition-colors">
                 <FontAwesomeIcon
                   icon={faBolt}
-                  className="text-2xl md:text-4xl text-blue-400 rounded-xl w-fits"
+                  className="text-2xl md:text-4xl text-blue-400 group-hover:text-white transition-colors"
                 />
+
                 <h3 className="font-bold md:text-lg/tight text-base pt-2 md:pt-4 px-9 md:px-2">
                   Quick Quotes
                 </h3>
-                <p className="py-2 px-4 md:px-0 md:text-sm text-xs">
+
+                <p className="py-2 px-2 md:px-4 md:text-sm text-xs">
                   No more waiting hours for broker emails.
                 </p>
               </div>
             </div>
-            <div className="border border-gray-200 rounded-2xl ">
-              <div className="flex flex-col text-center items-center py-4 text-gray-600">
+            <div className="border border-gray-200 rounded-2xl hover:bg-[#4267D7] group transition-colors duration-300 hover:shadow-lg">
+              <div className="flex flex-col text-center items-center py-4 text-white transition-colors">
                 <FontAwesomeIcon
                   icon={faDollarSign}
-                  className="text-2xl md:text-4xl text-blue-400  rounded-xl w-fit"
+                  className="text-2xl md:text-4xl text-blue-400 group-hover:text-white transition-colors"
                 />
                 <h3 className="font-bold md:text-lg/tight text-base pt-2 md:pt-4 ">
                   Transparent Pricing
                 </h3>
-                <p className="py-2 px-4 md:px-0 md:text-sm text-xs">
+                <p className="py-2 px-2 md:px-4 md:text-sm text-xs">
                   See all costs upfront with zero hidden fees.
                 </p>
               </div>
             </div>
-            <div className="border border-gray-200 rounded-2xl ">
-              <div className="flex flex-col text-center items-center py-4 text-gray-600">
+            <div className="border border-gray-200 rounded-2xl hover:bg-[#4267D7] group transition-colors duration-300 hover:shadow-lg">
+              <div className="flex flex-col text-center items-center py-4 text-white transition-colors">
                 <FontAwesomeIcon
                   icon={faEye}
-                  className="text-2xl md:text-4xl text-blue-400  rounded-xl w-fit"
+                  className="text-2xl md:text-4xl text-blue-400 group-hover:text-white transition-colors"
                 />
                 <h3 className="font-bold md:text-lg/tight text-base pt-2 md:pt-4 ">
                   Real-Time Tracking
                 </h3>
-                <p className="py-2 px-4 md:px-0 md:text-sm text-xs">
+                <p className="py-2 px-2 md:px-4 md:text-sm text-xs">
                   Know exactly where your shipment is, always.
                 </p>
               </div>
             </div>
-            <div className="border border-gray-200 rounded-2xl ">
-              <div className="flex flex-col text-center items-center py-4 text-gray-600">
+            <div className="border border-gray-200 rounded-2xl hover:bg-[#4267D7] group transition-colors duration-300 hover:shadow-lg">
+              <div className="flex flex-col text-center items-center py-4 text-white  transition-colors">
                 <FontAwesomeIcon
                   icon={faShieldHalved}
-                  className="text-2xl md:text-4xl text-blue-400  rounded-xl w-fit"
+                  className="text-2xl md:text-4xl text-blue-400 group-hover:text-white transition-colors"
                 />
                 <h3 className="font-bold md:text-lg/tight text-base pt-2 md:pt-4 ">
                   Temperature Guaranteed
                 </h3>
-                <p className="py-2 px-4 md:px-0 md:text-sm text-xs">
+                <p className="py-2 px-2 md:px-4 md:text-sm text-xs">
                   Cold chain integrity monitored end-to-end.
                 </p>
               </div>
             </div>
-            <div className="border border-gray-200 rounded-2xl ">
-              <div className="flex flex-col text-center items-center py-4 text-gray-600">
+            <div className="border border-gray-200 rounded-2xl hover:bg-[#4267D7] group transition-colors duration-300 hover:shadow-lg">
+              <div className="flex flex-col text-center items-center py-4 text-white  transition-colors">
                 <FontAwesomeIcon
                   icon={faHeadset}
-                  className="text-2xl md:text-4xl text-blue-400  rounded-xl w-fit"
+                  className="text-2xl md:text-4xl text-blue-400 group-hover:text-white transition-colors"
                 />
                 <h3 className="font-bold md:text-lg/tight text-base pt-2 md:pt-4 ">
                   Dedicated Support
                 </h3>
-                <p className="py-2 px-4 md:px-0 md:text-sm text-xs">
+                <p className="py-2 px-2 md:px-4 md:text-sm text-xs">
                   See all costs upfront with zero hidden fees.
                 </p>
               </div>
             </div>
-            <div className="border border-gray-200 rounded-2xl ">
-              <div className="flex flex-col text-center items-center py-4 text-gray-600">
+            <div className="border border-gray-200 rounded-2xl hover:bg-[#4267D7] group transition-colors duration-300 hover:shadow-lgs">
+              <div className="flex flex-col text-center items-center py-4 text-white  transition-colors">
                 <FontAwesomeIcon
                   icon={faLocationDot}
-                  className="text-2xl md:text-4xl text-blue-400  rounded-xl w-fit"
+                  className="text-2xl md:text-4xl text-blue-400 group-hover:text-white transition-colors"
                 />
                 <h3 className="font-bold md:text-lg/tight text-base pt-2 md:pt-4 ">
                   Expanding Coverage
@@ -241,84 +243,76 @@ export default function Home() {
             </div>
           </div>
           <div className=" md:flex grid md:flex-row grid-cols-1 items-center justify-center md:pb-8 pb-4 gap-4">
-            <div className="flex flex-col text-center items-center md:py-8 py-4">
-              <div className="relative flex flex-row ">
-                <span className="text-xs absolute -top-2 -right-2 font-semibold w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center">
+            <div className="flex flex-col text-center items-center md:py-8 py-4 group hover:shadow-lg hover:rounded-3xl transition-all duration-300">
+              <div className="relative flex flex-row">
+                <span className="text-xs absolute -top-2 -right-2 font-semibold w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-white group-hover:text-blue-500">
                   1
                 </span>
                 <FontAwesomeIcon
                   icon={faBoxesStacked}
-                  className="text-2xl md:text-4xl text-blue-400 p-4 bg-grey-100 rounded-2xl bg-white"
+                  className="text-2xl md:text-4xl text-blue-400 p-4 bg-grey-100 rounded-2xl 
+                  transition-all duration-300 group-hover:bg-blue-400 group-hover:text-white"
                 />
               </div>
               <h3 className="font-bold md:text-lg/tight text-base/tight  pt-2 md:pt-4 px-2 md:px-2 text-gray-900 md:w-2/3 w-full">
                 Enter Shipment Details
               </h3>
               <p className="py-2 px-4 md:px-2 md:text-sm text-xs text-gray-600  md:w-3/4 w-full">
-                Origin, Destination , temperature class, and pallet counts
+                Origin, Destination, temperature class, and pallet counts
               </p>
             </div>
-
-            <div className="flex flex-col text-center items-center md:py-8 py-4">
-              <div className="relative flex flex-row ">
-                <span
-                  className="text-xs absolute -top-2 -right-2 font-semibold w-6 h-6 bg-blue-500 text-white 
-                rounded-full flex items-center justify-center"
-                >
+            <div className="flex flex-col text-center items-center md:py-8 py-4 group hover:shadow-lg hover:rounded-3xl transition-all duration-300">
+              <div className="relative flex flex-row">
+                <span className="text-xs absolute -top-2 -right-2 font-semibold w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-white group-hover:text-blue-500">
                   2
                 </span>
                 <FontAwesomeIcon
                   icon={faMagnifyingGlass}
-                  className="text-2xl md:text-4xl text-blue-400 p-4 bg-grey-100 rounded-2xl bg-white"
+                  className="text-2xl md:text-4xl text-blue-400 p-4 bg-grey-100 rounded-2xl 
+                  transition-all duration-300 group-hover:bg-blue-400 group-hover:text-white"
                 />
               </div>
-              <h3 className="font-bold md:text-lg/tight text-base/tight  pt-2 md:pt-4 px-9 md:px-2 text-gray-900 md:w-2/3 w-full">
+              <h3 className="font-bold md:text-lg/tight text-base/tight  pt-2 md:pt-4 px-2 md:px-2 text-gray-900 md:w-2/3 w-full">
                 Compare Quotes
               </h3>
               <p className="py-2 px-4 md:px-2 md:text-sm text-xs text-gray-600  md:w-3/4 w-full">
                 Instantly see rates from vetted cold-chain
               </p>
             </div>
-
-            <div className="flex flex-col text-center items-center py-8">
-              <div className="relative flex flex-row ">
-                <span
-                  className="text-xs absolute -top-2 -right-2 font-semibold w-6 h-6 bg-blue-500 text-white 
-                rounded-full flex items-center justify-center"
-                >
+            <div className="flex flex-col text-center items-center md:py-8 py-4 group hover:shadow-lg hover:rounded-3xl transition-all duration-300">
+              <div className="relative flex flex-row">
+                <span className="text-xs absolute -top-2 -right-2 font-semibold w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-white group-hover:text-blue-500">
                   3
                 </span>
                 <FontAwesomeIcon
                   icon={faWallet}
-                  className="text-2xl md:text-4xl text-blue-400 p-4 bg-grey-100 rounded-2xl bg-white"
+                  className="text-2xl md:text-4xl text-blue-400 p-4 bg-grey-100 rounded-2xl 
+                  transition-all duration-300 group-hover:bg-blue-400 group-hover:text-white"
                 />
               </div>
-              <h3 className="font-bold md:text-lg/tight text-base/tight  pt-2 md:pt-4 px-9 md:px-2 text-gray-900 md:w-2/3 w-full">
+              <h3 className="font-bold md:text-lg/tight text-base/tight  pt-2 md:pt-4 px-2 md:px-2 text-gray-900 md:w-2/3 w-full">
                 Book Now & Pay Later
               </h3>
-              <p className="py-2 px-4 md:px-2 md:text-sm text-xs text-gray-600 md:w-3/4 w-full">
+              <p className="py-2 px-4 md:px-2 md:text-sm text-xs text-gray-600  md:w-3/4 w-full">
                 Confirm your booking & Pay Securely Online.
               </p>
             </div>
-
-            <div className="flex flex-col text-center items-center py-8">
-              <div className="relative flex flex-row ">
-                <span
-                  className="text-xs absolute -top-2 -right-2 font-semibold w-6 h-6 bg-blue-500 text-white 
-                rounded-full flex items-center justify-center"
-                >
+            <div className="flex flex-col text-center items-center md:py-8 py-4 group hover:shadow-lg hover:rounded-3xl transition-all duration-300">
+              <div className="relative flex flex-row">
+                <span className="text-xs absolute -top-2 -right-2 font-semibold w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-white group-hover:text-blue-500">
                   4
                 </span>
                 <FontAwesomeIcon
                   icon={faTruckFast}
-                  className="text-2xl md:text-4xl text-blue-400 p-4 bg-grey-100 rounded-2xl bg-white"
+                  className="text-2xl md:text-4xl text-blue-400 p-4 bg-grey-100 rounded-2xl 
+                  transition-all duration-300 group-hover:bg-blue-400 group-hover:text-white"
                 />
               </div>
-              <h3 className="font-bold md:text-lg/tight text-base/tight  pt-2 md:pt-4 px-9 md:px-2 text-gray-900 md:w-2/3 w-full">
-                Track <div>& Deliver</div>
+              <h3 className="font-bold md:text-lg/tight text-base/tight  pt-2 md:pt-4 px-2 md:px-2 text-gray-900 md:w-2/3 w-full">
+                Book Now & Pay Later
               </h3>
-              <p className="py-2 px-4 md:px-2 md:text-sm text-xs text-gray-600  w-full md:w-3/4">
-                Real time temperature tracking until Delivery.
+              <p className="py-2 px-4 md:px-2 md:text-sm text-xs text-gray-600  md:w-3/4 w-full">
+                Confirm your booking & Pay Securely Online.
               </p>
             </div>
           </div>
@@ -344,7 +338,7 @@ export default function Home() {
                   money on cold freight
                 </p>
                 <div className="hero-button flex flex-row  md:gap-8 gap-2 py-4 justify-center">
-                  <button className="bg-blue-500 px-6 py-2 rounded-2xl md:w-60 w-40 text-white md:text-base text-xs">
+                  <button className="bg-blue-500 px-6 py-2 rounded-2xl md:w-60 w-40 text-white md:text-base text-xs hover:bg-blue-400 hover:shadow-lg">
                     Create Free Login
                   </button>
                 </div>

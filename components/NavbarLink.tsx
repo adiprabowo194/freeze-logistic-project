@@ -41,7 +41,7 @@ function NavbarLink({ active, setActive }: NavbarLinkProps) {
   const pathname = usePathname();
   const linkClass = (path: string) => {
     return pathname === path
-      ? "md:text-blue-500 text-[#0F253C] font-bold"
+      ? "md:text-blue-500 text-[#0F253C] font-bold px-4 py-4 bg-white rounded-2xl"
       : "text-white md:text-[#0F253C]";
   };
 

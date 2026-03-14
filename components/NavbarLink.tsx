@@ -134,7 +134,9 @@ function NavbarLink({ active, setActive }: NavbarLinkProps) {
         z-50
       `}
         >
-          <button
+          <Link
+            href="/get-started"
+            onClick={handleClose}
             className={`
             w-full md:w-auto
             px-4 py-3
@@ -145,7 +147,7 @@ function NavbarLink({ active, setActive }: NavbarLinkProps) {
           `}
           >
             Get Started
-          </button>
+          </Link>
         </div>
       </div>
 

@@ -18,6 +18,7 @@ import {
 import { faHeadset, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -203,12 +204,18 @@ export default function Home() {
           on cold freight
         </h3>
         <div className="hero-button flex flex-row  md:gap-8 gap-2 py-4 justify-center">
-          <button className="bg-white px-6 py-2 rounded-2xl md:w-60 w-40  md:text-base text-xs hover:bg-[#0F253C] hover:text-white">
+          {/* <button className="bg-white px-6 py-2 rounded-2xl md:w-60 w-40  md:text-base text-xs hover:bg-[#0F253C] hover:text-white">
             Create Free Login
           </button>
           <button className="bg-blue-300 text-white px-6 py-2 rounded-2xl md:w-40 w-30 md:text-base text-xs hover:bg-[#0F253C] ">
             Login
-          </button>
+          </button> */}
+
+          <Link href="/get-started" className="flex items-center gap-4">
+            <button className="bg-blue-300 text-white px-6 py-4 rounded-4xl md:w-80 w-30 md:text-xl text-xs hover:bg-[#0F253C] ">
+              Get Started
+            </button>
+          </Link>
         </div>
         <p className="py-8 text-center text-gray-100 md:text-base text-xs hover:text-[#0F253C]">
           No credit card required

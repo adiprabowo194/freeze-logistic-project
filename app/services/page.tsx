@@ -16,6 +16,7 @@ import { faHeadset, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import Footer from "@/components/Footer";
 import { faDollarSign } from "@fortawesome/free-solid-svg-icons/faDollarSign";
 import { faPeopleCarryBox } from "@fortawesome/free-solid-svg-icons/faPeopleCarryBox";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -209,9 +210,11 @@ export default function Home() {
           <h2 className="md:text-4xl/tight text-3xl font-bold flex flex-col  border-white md:px-14 min-h-20 items-center  md:border-l-2 ">
             <span className="text-white">Create A Quote</span>
             <span className="hero-button flex flex-row  md:gap-8 gap-2 py-4 justify-center">
-              <button className="bg-white px-6 py-2 rounded-2xl md:w-60 w-40  md:text-base text-xs text-[#0F253C] hover:bg-blue-500 hover:text-white">
-                Get Started
-              </button>
+              <Link href="/get-started" className="flex items-center gap-4">
+                <button className="bg-white px-6 py-2 rounded-2xl md:w-60 w-40  md:text-base text-xs text-[#0F253C] hover:bg-blue-500 hover:text-white">
+                  Get Started
+                </button>
+              </Link>
             </span>
           </h2>
         </div>

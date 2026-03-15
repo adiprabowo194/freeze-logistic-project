@@ -134,10 +134,10 @@ function NavbarLink({ active, setActive }: NavbarLinkProps) {
         z-50
       `}
         >
-          <Link
-            href="/get-started"
-            onClick={handleClose}
-            className={`
+          <Link href="/get-started" className="flex items-center gap-4">
+            <button
+              onClick={handleClose}
+              className={`
             w-full md:w-auto
             px-4 py-3
             rounded-2xl
@@ -145,8 +145,9 @@ function NavbarLink({ active, setActive }: NavbarLinkProps) {
             ${active ? "bg-white hover:bg-[#0F253C] text-blue-500 shadow-lg" : "bg-blue-500 text-white"}
             md:bg-blue-500 [#0F253C] md:text-white md:shadow-none hover:bg-[#0F253C]
           `}
-          >
-            Get Started
+            >
+              Get Started
+            </button>
           </Link>
         </div>
       </div>

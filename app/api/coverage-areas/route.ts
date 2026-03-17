@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
 import CoverageAreas from "@/models/CoverageAreas";
+import { NextRequest } from "next/server";
 import { Op } from "sequelize";
 
-export async function GET(req) {
+export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const search = searchParams.get("q") || "";
 

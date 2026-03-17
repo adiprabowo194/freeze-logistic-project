@@ -1,7 +1,17 @@
-import { DataTypes, Model } from "sequelize";
+import { DataTypes, Model, InferAttributes, InferCreationAttributes } from "sequelize";
 import { sequelize } from "@/lib/sequelize";
 
-class CoverageAreas extends Model {}
+class CoverageAreas extends Model<
+  InferAttributes<CoverageAreas>,
+  InferCreationAttributes<CoverageAreas>
+> {
+  declare id: number;
+  declare area_code: string;
+  declare suburb: string;
+  declare postcode: number;
+  declare state: string;
+  declare state_code: string;
+}
 
 CoverageAreas.init(
   {

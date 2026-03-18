@@ -212,7 +212,7 @@ export default function Home() {
           </button> */}
 
           <Link href="/get-started" className="flex items-center gap-4">
-            <button className="bg-blue-300 text-white px-6 py-4 rounded-4xl md:w-80 w-30 md:text-xl text-xs hover:bg-[#0F253C] ">
+            <button className="bg-blue-300 text-white px-6 py-4 rounded-full md:w-80 w-30 md:text-xl text-xs hover:bg-[#0F253C] ">
               Get Started
             </button>
           </Link>

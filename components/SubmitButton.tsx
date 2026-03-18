@@ -9,7 +9,7 @@ export default function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="uppercase text-sm font-bold tracking-wide bg-indigo-500 text-gray-100 p-3 rounded-4xl w-full focus:outline-none focus:shadow-outline"
+      className="uppercase text-sm font-bold tracking-wide bg-indigo-500 text-gray-100 p-3 rounded-full w-full focus:outline-none focus:shadow-outline"
     >
       {pending ? "Sending..." : "Send Message"}
     </button>

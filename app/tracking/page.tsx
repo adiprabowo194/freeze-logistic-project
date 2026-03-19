@@ -12,6 +12,7 @@ import {
   faTruckFast,
 } from "@fortawesome/free-solid-svg-icons";
 import { faHeadset, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 import Footer from "@/components/Footer";
 import { faDollarSign } from "@fortawesome/free-solid-svg-icons/faDollarSign";
@@ -65,9 +66,15 @@ export default function Home() {
             </h2>
             <div className="flex items-center justify-between">
               <p>Sign up for your free account now.</p>
-              <button className="relative bottom-4 text-white bg-blue-500 px-6 py-2 rounded-2xl md:w-60 w-40  md:text-base text-xs hover:bg-[#0F253C]">
-                Create New Login
-              </button>
+              <Link
+                href="https://app.freezelogistics.com.au"
+                target="_blank"
+                className="flex items-center gap-4"
+              >
+                <button className="relative bottom-4 text-white bg-blue-500 px-6 py-2 rounded-2xl md:w-60 w-40  md:text-base text-xs hover:bg-[#0F253C]">
+                  Create New Login
+                </button>
+              </Link>
             </div>
           </div>
         </div>

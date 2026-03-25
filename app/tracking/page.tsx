@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import DataImage from "@/public/assets/data";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -19,6 +23,20 @@ import { faDollarSign } from "@fortawesome/free-solid-svg-icons/faDollarSign";
 import { faPeopleCarryBox } from "@fortawesome/free-solid-svg-icons/faPeopleCarryBox";
 
 export default function Home() {
+  const router = useRouter();
+  const [connote, setConnote] = useState("");
+
+  const handleTrack = () => {
+    if (!connote.trim()) return;
+
+    router.push(`/tracking/${connote}`);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleTrack();
+    }
+  };
   return (
     <div className="py-8">
       <section
@@ -39,10 +57,10 @@ export default function Home() {
 
               <div className="md:py-4 py-2 w-full tracking-wider">
                 <input
-                  id="price"
-                  type="text"
-                  name="awb_no"
-                  placeholder="AWB121XXXXXXX and Enter if you searching multiple"
+                  value={connote}
+                  onChange={(e) => setConnote(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  placeholder="Enter Connote Number (e.g. CN123456789)"
                   className="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 
   text-center placeholder:text-gray-400
   focus:outline-none sm:text-sm/6 bg-amber-50 
@@ -50,7 +68,10 @@ export default function Home() {
                 />
               </div>
               <div className="hero-button flex flex-row  md:gap-8 gap-2 py-4 justify-center">
-                <button className="bg-amber-400 px-6 py-2 rounded-2xl md:w-60 w-40 text-[#0F253C] md:text-base text-xs hover:bg-[#0F253C]">
+                <button
+                  onClick={handleTrack}
+                  className="bg-amber-400 px-6 py-2 rounded-2xl md:w-60 w-40 text-[#0F253C] md:text-base text-xs hover:bg-[#0F253C] hover:text-white transition"
+                >
                   Track My Delivery
                 </button>
               </div>

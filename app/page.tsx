@@ -22,7 +22,7 @@ export default function Home() {
       <section className="hero items-center w-full md:py-16 py-8 container mx-auto">
         <div className="hero-row">
           <div className="flex flex-col items-center md:text-center text-left px-2 md:px-8">
-            <div className="flex items-center gap-3 md:py-4 py-6">
+            {/* <div className="flex items-center gap-3 md:py-4 py-6">
               <div className="flex items-center gap-2">
                 <i className="ri-star-s-fill text-amber-300 text-xl"></i>
                 <span className="md:text-base text-sm">4.8</span>
@@ -31,8 +31,8 @@ export default function Home() {
               <p className="md:text-base text-xs">
                 Trusted by 200+ Australian businesses
               </p>
-            </div>
-            <h1 className="md:text-5xl/tight text-4xl/tight font-bold text-center  px-2 md:px-8">
+            </div> */}
+            <h1 className="md:text-5xl/tight text-4xl/tight font-bold text-center  px-2 md:px-8 py-6">
               <div className="">Australia’s Smarter</div>
               <div className="bg-[linear-gradient(90deg,#4267D7_32%,#3ACDFF_100%)] bg-clip-text text-transparent">
                 Way to Manage Cold Freight

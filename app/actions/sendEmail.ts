@@ -77,7 +77,8 @@ export async function sendEmail(prevState: any, formData: FormData) {
     // });
     const { data: emailResult, error } = await resend.emails.send({
       from: "Freeze Logistics <no-reply@freezelogistics.com.au>",
-      to: ["admin@freezelogistics.com.au"],
+      // to: ["admin@freezelogistics.com.au"],
+      to: ["adiprabowo194@gmail.com"],
       subject: "New Contact Message",
       html: emailTemplate(parsed.data),
     });

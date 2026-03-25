@@ -31,7 +31,7 @@ export async function GET(req: NextRequest) {
   return NextResponse.json(
     data.map((item) => ({
       value: item.id,
-      label: `${item.suburb}, ${item.state}`,
+      label: `${item.suburb}s`,
     }))
   );
 }

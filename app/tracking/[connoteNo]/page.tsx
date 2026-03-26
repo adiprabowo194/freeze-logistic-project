@@ -9,8 +9,7 @@ export default function Home() {
   const [connote, setConnote] = useState("");
   const [preview, setPreview] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-  const [searched, setSearched] = useState(false);
-
+  const [showHistory, setShowHistory] = useState(false);
   const params = useParams();
   const connoteNo = params.connoteNo as string;
   // 🔥 AUTO FETCH (tanpa klik)
@@ -37,8 +36,6 @@ export default function Home() {
     if (!connote.trim()) return;
 
     const cleanConnote = connote.trim().toUpperCase();
-
-    setSearched(true);
     setLoading(true);
 
     try {
@@ -71,6 +68,27 @@ export default function Home() {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       handleTrack();
+    }
+  };
+
+  // ================= FORMAT DATE ONLY =================
+  const formatDate = (date: string) => {
+    return new Date(date).toLocaleDateString(); // 🔥 tanpa jam
+  };
+
+  // ================= STATUS COLOR =================
+  const getStatusColor = (status: string) => {
+    switch (status.toLowerCase()) {
+      case "delivered":
+        return "text-green-600 bg-green-50";
+      case "delivery":
+      case "in transit":
+        return "text-blue-600 bg-blue-50";
+      case "confirm":
+      case "picked up":
+        return "text-yellow-600 bg-yellow-50";
+      default:
+        return "text-gray-600 bg-gray-100";
     }
   };
 
@@ -117,7 +135,7 @@ export default function Home() {
       </section>
 
       {/* RESULT */}
-      <section className="container mx-auto py-10">
+      <section className="container mx-auto py-6 pt-10">
         {loading ? (
           <p className="text-center text-gray-400">Loading...</p>
         ) : preview ? (
@@ -128,7 +146,7 @@ export default function Home() {
               <div className="flex gap-4">
                 {/* ICON */}
                 <div className="w-12 h-12 bg-blue-100 flex items-center justify-center rounded-xl">
-                  <i className="ri-archive-line text-blue-600 text-xl"></i>
+                  <i className="ri-archive-line  text-xl"></i>
                 </div>
 
                 {/* INFO */}
@@ -144,7 +162,11 @@ export default function Home() {
               </div>
 
               {/* STATUS */}
-              <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs capitalize">
+              <span
+                className={`px-3 py-1 rounded-full text-xs capitalize ${getStatusColor(
+                  preview.status,
+                )}`}
+              >
                 {preview.status}
               </span>
             </div>
@@ -186,7 +208,7 @@ export default function Home() {
             <div className="flex justify-between items-center">
               {/* CARRIER */}
               <div>
-                <p className="text-xs text-gray-400">Type</p>
+                <p className="text-xs text-gray-400">Temperature:</p>
                 <p className="font-medium">{preview.cargo_type}</p>
               </div>
 
@@ -197,13 +219,13 @@ export default function Home() {
               </div>
 
               {/* ACTION */}
-              <div className="flex flex-col gap-2">
-                <Link
-                  href={`/track-shipment/${preview.connote_no}`}
-                  className="border px-4 py-1 rounded-full text-sm hover:bg-gray-100 text-center"
+              <div className="pt-3">
+                <button
+                  onClick={() => setShowHistory(!showHistory)}
+                  className="border px-4 py-2 rounded-full text-sm hover:bg-gray-100 w-full"
                 >
-                  Track History
-                </Link>
+                  {showHistory ? "Close History" : "Show History"}
+                </button>
               </div>
             </div>
           </div>
@@ -211,6 +233,109 @@ export default function Home() {
           <p className="text-center text-gray-400">Tracking data not found</p>
         )}
       </section>
+
+      {showHistory && (
+        <section className="mx-auto py-2">
+          <div className="bg-white rounded-2xl border p-6 w-11/12 lg:w-3/4 mx-auto shadow-sm">
+            {/* GRID */}
+            <div className=" w-full">
+              {/* ================= LEFT - TIMELINE ================= */}
+              <div className="py-4">
+                <h3 className="font-semibold mb-6 text-lg">Tracking History</h3>
+
+                <div className="relative pl-4">
+                  {/* LINE */}
+                  <div className="absolute left-1.5 top-0 bottom-0 w-[2px] bg-gray-200"></div>
+
+                  <div className="space-y-6">
+                    {[...preview.history]
+                      .reverse()
+                      .map((item: any, index: number) => (
+                        <div key={index} className="flex gap-4 items-start">
+                          {/* DOT */}
+                          <div className="relative z-10">
+                            <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                          </div>
+
+                          {/* CONTENT */}
+                          <div>
+                            <p className="text-sm font-medium text-gray-800">
+                              {item.description}
+                            </p>
+                            <p className="text-xs text-gray-400">
+                              {new Date(item.createdAt).toLocaleDateString()}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* ================= RIGHT - TABLE ================= */}
+              <div className="py-4">
+                {/* <h3 className="font-semibold mb-6 text-lg">
+                  Tracking Logs (System)
+                </h3> */}
+
+                <div className="overflow-x-auto max-h-[420px] border rounded-xl">
+                  <table className="w-full text-xs">
+                    {/* HEADER */}
+                    <thead className="bg-gray-100 sticky top-0 z-10">
+                      <tr>
+                        <th className="p-3 border text-left">Connote</th>
+                        <th className="p-3 border text-left">Status</th>
+                        <th className="p-3 border text-left">Description</th>
+                        <th className="p-3 border text-left">Created</th>
+                        <th className="p-3 border text-left">Updated</th>
+                        <th className="p-3 border text-left">User</th>
+                      </tr>
+                    </thead>
+
+                    {/* BODY */}
+                    <tbody>
+                      {preview.history.map((item: any, index: number) => (
+                        <tr
+                          key={index}
+                          className={`hover:bg-gray-50 transition ${
+                            index === preview.history.length - 1
+                              ? "bg-green-50"
+                              : ""
+                          }`}
+                        >
+                          <td className="p-3 border">{item.connote_no}</td>
+
+                          <td className="p-3 border">
+                            <span
+                              className={`px-2 py-1 rounded text-xs font-medium ${getStatusColor(
+                                item.status,
+                              )}`}
+                            >
+                              {item.status}
+                            </span>
+                          </td>
+
+                          <td className="p-3 border">{item.description}</td>
+
+                          <td className="p-3 border">
+                            {formatDate(item.createdAt)}
+                          </td>
+
+                          <td className="p-3 border">
+                            {formatDate(item.updatedAt)}
+                          </td>
+
+                          <td className="p-3 border">{item.user_inp}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="w-full py-8 container mx-auto">

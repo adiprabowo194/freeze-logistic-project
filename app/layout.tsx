@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Freeze Logistics",
   description: "Company profile Freeze Logistics",
   icons: {
-    icon: "/assets/favicon.png",
+    icon: "/assets/logo_freeze_logistics_nav.webp",
   },
 };
 

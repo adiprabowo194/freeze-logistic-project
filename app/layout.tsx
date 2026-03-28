@@ -16,12 +16,12 @@ export const metadata: Metadata = {
   title: "Freeze Logistics",
   description: "Company profile Freeze Logistics",
   icons: {
-    icon: "/assets/logo_freeze_logistics_nav.webp",
+    icon: "/assets/logo_freeze_logistics_nav.ico",
   },
   openGraph: {
     title: "Freeze Logistics",
     description: "Company profile Freeze Logistics",
-    images: ["/assets/logo_freeze_logistics_nav.webp"],
+    images: ["/assets/logo_freeze_logistics_nav.ico"],
   },
 };
 

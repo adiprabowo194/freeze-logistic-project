@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   icons: {
     icon: "/assets/logo_freeze_logistics_nav.webp",
   },
+  openGraph: {
+    title: "Freeze Logistics",
+    description: "Company profile Freeze Logistics",
+    images: ["/assets/logo_freeze_logistics_nav.webp"],
+  },
 };
 
 export default function RootLayout({

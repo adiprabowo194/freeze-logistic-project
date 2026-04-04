@@ -4,10 +4,10 @@ import "@/models"; // 🔥 init relations
 import TrackingHistory from "@/models/TrackingHistory";
 import Quotes from "@/models/Quotes";
 import CoverageAreas from "@/models/CoverageAreas";
-
+import PackageDetails from "@/models/PackageDetail"; // ✅ tambah ini
 export async function GET(
   req: Request,
-  context: { params: Promise<{ connoteNo: string }> }
+  context: { params: Promise<{ connoteNo: string }> },
 ) {
   try {
     const { connoteNo } = await context.params;
@@ -30,6 +30,17 @@ export async function GET(
               as: "destinationArea",
               attributes: ["suburb", "state"],
             },
+            {
+              model: PackageDetails,
+              as: "packageDetails", // ✅ HARUS sama dengan relasi
+              attributes: ["temperature", "unit", "qty", "weight"],
+              required: false,
+
+              // 🔥 ambil 1 saja (default)
+              separate: true,
+              limit: 1,
+              order: [["createdAt", "DESC"]],
+            },
           ],
         },
       ],
@@ -42,24 +53,29 @@ export async function GET(
     const last = rows[rows.length - 1];
     const quote = last.get("quote") as any;
 
+    // 🔥 ambil package detail pertama
+    const firstDetail = quote?.packageDetails?.[0] || null;
+
     const result = {
       connote_no: connoteNo,
       status: last.get("status"),
 
       origin: quote?.originArea
-        ? `${quote.originArea.suburb}`
+        ? `${quote.originArea.suburb}, ${quote.originArea.state}`
         : "-",
 
       destination: quote?.destinationArea
-        ? `${quote.destinationArea.suburb}`
+        ? `${quote.destinationArea.suburb}, ${quote.destinationArea.state}`
         : "-",
-      cargo_type: quote?.cargo_type ? quote.cargo_type : '-',
-      receiver_name: quote?.receiver_name ? quote?.receiver_name : '-',
 
-      // 🔥 NEW DATA
-      weight: quote?.weight || 0,
-      qty: quote?.qty || 0,
-      unit: quote?.unit || "-",
+      // 🔥 ambil dari packageDetails
+      temperature: firstDetail?.temperature || "-",
+      unit: firstDetail?.unit || "-",
+
+      // optional
+      weight: firstDetail?.weight || quote?.weight || 0,
+      qty: firstDetail?.qty || quote?.qty || 0,
+      receiver_name: quote?.receiver_name || 0,
 
       history: rows.map((row: any) => ({
         connote_no: row.get("connote_no"),
@@ -76,7 +92,7 @@ export async function GET(
     console.error(err);
     return NextResponse.json(
       { message: "Failed to fetch tracking data" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

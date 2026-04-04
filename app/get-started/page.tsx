@@ -181,6 +181,25 @@ export default function Page() {
                 <p className="text-red-500">{state.errors.contact_number}</p>
               )}
             </div>
+            {/* address */}
+            <div className="pb-4">
+              <span className="uppercase text-sm text-gray-600 font-bold">
+                Street Address *
+              </span>
+
+              <input
+                className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                type="text"
+                placeholder="Full Street Address"
+                name="street_address"
+              />
+
+              {state?.errors?.street_address && (
+                <p className="text-red-500 mt-1">
+                  {state.errors.street_address}
+                </p>
+              )}
+            </div>
             {/* SUBURB */}
             <div className="pb-4">
               <span className="uppercase text-sm text-gray-600 font-bold">
@@ -194,7 +213,7 @@ export default function Page() {
                   defaultOptions
                   value={selectedSuburb}
                   onChange={(val) => setSelectedSuburb(val as OptionType)}
-                  placeholder="Search suburb or state..."
+                  placeholder="Search suburb..."
                   classNamePrefix="react-select"
                   styles={{
                     control: (base, stateSelect) => ({
@@ -228,25 +247,6 @@ export default function Page() {
               {state?.errors?.suburb && (
                 <p className="text-red-500 mt-1 text-sm">
                   {state.errors.suburb[0]}
-                </p>
-              )}
-            </div>
-
-            <div className="pb-4">
-              <span className="uppercase text-sm text-gray-600 font-bold">
-                Street Address *
-              </span>
-
-              <input
-                className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-                type="text"
-                placeholder="Full Street Address"
-                name="street_address"
-              />
-
-              {state?.errors?.street_address && (
-                <p className="text-red-500 mt-1">
-                  {state.errors.street_address}
                 </p>
               )}
             </div>

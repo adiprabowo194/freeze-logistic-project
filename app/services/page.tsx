@@ -22,46 +22,26 @@ export default function Home() {
   return (
     <div className="py-8">
       <section
-        className="relative w-full md:py-16 py-8 md:min-h-[640px] min-h-[500px]
+        className="relative w-full md:py-16 py-8 md:min-h-[480px] min-h-[500px]
   md:bg-[length:120%]  bg-[length:200%]
   bg-no-repeat md:bg-center bg-left-top"
         style={{ backgroundImage: "url('/assets/truck_banner.webp')" }}
       >
         <div className="absolute inset-0 bg-[#4267D7]/80"></div>
 
-        <div className=" absolute inset-0 mx-auto md:top-80 top-70 container">
-          <div className="md:w-7/8 w-full md:px-10 px-4">
+        <div className=" absolute inset-0 mx-auto md:top-60 top-70 container">
+          <div className="md:w-7/8 w-full md:px-10 px-4  text-center">
             <div className="box-content  md:pt-8 pt-2 py-2 px-2 md:px-4">
               <h2 className="md:text-5xl/tight text-3xl/tight font-bold  text-white">
                 Deliver Smarter
               </h2>
-              <div className="md:py-4 py-2 md:w-4/6 w-full tracking-wider">
-                <p className="md:text-base/tight text-[10px] mx-auto text-white">
+              <div className="md:py-4 py-2 md:w-4/6 w-full tracking-wider text-center mx-auto">
+                <p className="md:text-base/tight text-[10px]  text-white">
                   Innovative Delivery solution that will increase your bottom
                   line, improve customer satisfaction, and win you more
                   business. Door to door & time slot deliveries with no hidden
                   charges
                 </p>
-              </div>
-              <div className="flex md:gap-16">
-                <div className="flex md:flex-row flex-col items-center md:gap-4">
-                  <i className="ri-checkbox-circle-line text-amber-400"></i>
-                  <p className="md:py-8 text-center text-gray-100 md:text-sm text-[10px] ">
-                    No Manual Handling Fees
-                  </p>
-                </div>
-                <div className="flex md:flex-row flex-col items-center md:gap-4">
-                  <i className="ri-checkbox-circle-line text-amber-400"></i>
-                  <p className="md:py-8 text-center text-gray-100 md:text-sm text-[10px] ">
-                    No Residential Surcharges
-                  </p>
-                </div>
-                <div className="flex md:flex-row flex-col items-center md:gap-4">
-                  <i className="ri-checkbox-circle-line text-amber-400"></i>
-                  <p className="md:py-8 text-center text-gray-100 md:text-sm text-xs ">
-                    No Heavy Weight Restrictions
-                  </p>
-                </div>
               </div>
             </div>
           </div>
@@ -69,11 +49,11 @@ export default function Home() {
       </section>
 
       <section className="AnyTemperature flex flex-col items-center w-full md:px-4 py-16 container mx-auto">
-        <div className="box-content py-2 px-4">
+        <div className="box-content py-2 px-4 ">
           <h2 className="md:text-3xl/tight text-4xl/tight font-bold text-center tracking-widest bg-[linear-gradient(90deg,#4267D7_32%,#3ACDFF_100%)] bg-clip-text text-transparent">
             Trusted by Businesses across Victoria
           </h2>
-          <div className="py-8 grid md:grid-cols-3 grid-cols-1 gap-4 w-7/8 mx-auto">
+          <div className="py-8 grid md:grid-cols-3 grid-cols-1 gap-4 w-6/8 mx-auto">
             <div>
               <Image
                 src={DataImage.Food__Beverage}

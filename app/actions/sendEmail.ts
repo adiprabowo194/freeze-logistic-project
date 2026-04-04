@@ -18,9 +18,7 @@ export async function sendEmail(prevState: any, formData: FormData) {
 
     const forwarded = headersList.get("x-forwarded-for");
     const ip =
-      forwarded?.split(",")[0] ||
-      headersList.get("x-real-ip") ||
-      "anonymous";
+      forwarded?.split(",")[0] || headersList.get("x-real-ip") || "anonymous";
 
     // ========================
     // FORMAT FORM DATA
@@ -66,18 +64,11 @@ export async function sendEmail(prevState: any, formData: FormData) {
     // ========================
     // SEND EMAIL (🔥 PENTING: DULUAN)
     // ========================
-    // const { data: emailResult, error } = await resend.emails.send({
-    //   // from: "Contact <onboarding@resend.dev>",
-    //   // to: ["trinovainovasi@gmail.com"],
-    //   // from: "Freeze Logistics <no-reply@freezelogistik.com>",
-    // from: "Freeze Logistics <no-reply@send.freezelogistics.com.au>",
-    //   to: ["adiprabowo194@gmail.com"],
-    //   subject: "New Contact Message",
-    //   html: emailTemplate(parsed.data),
-    // });
     const { data: emailResult, error } = await resend.emails.send({
       from: "Freeze Logistics <no-reply@freezelogistics.com.au>",
-      to: ["admin@freezelogistics.com.au"],
+      to: process.env.EMAIL_REGISTER_SENDING
+        ? [process.env.EMAIL_REGISTER_SENDING]
+        : ["admin@freezelogistics.com.au"],
       // to: ["adiprabowo194@gmail.com"],
       subject: "New Contact Message",
       html: emailTemplate(parsed.data),
@@ -123,7 +114,6 @@ export async function sendEmail(prevState: any, formData: FormData) {
       message: "Message sent successfully",
       timestamp: Date.now(),
     };
-
   } catch (error) {
     console.error("❌ Server error:", error);
 

@@ -209,7 +209,7 @@ export default function Home() {
               {/* CARRIER */}
               <div>
                 <p className="text-xs text-gray-400">Temperature:</p>
-                <p className="font-medium">{preview.cargo_type}</p>
+                <p className="font-medium">{preview.temperature}</p>
               </div>
 
               {/* PRICE (optional dummy) */}

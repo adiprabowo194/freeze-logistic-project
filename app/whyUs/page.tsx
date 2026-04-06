@@ -1,21 +1,21 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Why Choose Us",
+  description:
+    "Discover why Freeze Logistics is the preferred partner for cold chain solutions in Australia. We guarantee temperature integrity and modern fleet reliability.",
+};
+
 import Image from "next/image";
 import DataImage from "@/public/assets/data";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faDollarSign,
-  faBolt,
-  faEye,
-  faTruckFast,
-  faBoxesStacked,
-  faMagnifyingGlass,
-  faWallet,
   faGlobe,
   faBullseye,
   faUsers,
   faShieldHalved,
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
-import { faHeadset, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 import Footer from "@/components/Footer";
 import Link from "next/link";

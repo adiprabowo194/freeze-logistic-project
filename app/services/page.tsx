@@ -1,14 +1,18 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Services | Refrigerated & Frozen Transport",
+  description:
+    "Explore our range of cold chain services, including frozen food transport, chilled freight, and specialized temperature-sensitive logistics.",
+};
+
 import Image from "next/image";
 import DataImage from "@/public/assets/data";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faBusinessTime,
   faClock,
-  faDollar,
   faPeopleGroup,
   faSearch,
-  faTimes,
-  faTruck,
   faTruckFast,
 } from "@fortawesome/free-solid-svg-icons";
 import { faHeadset, faLocationDot } from "@fortawesome/free-solid-svg-icons";

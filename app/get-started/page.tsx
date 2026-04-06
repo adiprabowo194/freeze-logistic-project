@@ -1,13 +1,5 @@
 "use client";
 
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Get Started | Request a Logistics Quote",
-  description:
-    "Ready to move your temperature-sensitive goods? Contact us today to get a customized quote for your refrigerated transport needs.",
-};
-
 import Footer from "@/components/Footer";
 import { useContactForm } from "@/hooks/useContactForm";
 import SubmitButton from "@/components/SubmitButton";

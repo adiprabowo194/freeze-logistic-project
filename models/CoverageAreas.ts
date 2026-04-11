@@ -14,6 +14,7 @@ class CoverageAreas extends Model<
   declare area_code: string;
   declare suburb: string;
   declare postcode: string;
+  declare type: string;
   declare state: string;
 }
 
@@ -41,6 +42,10 @@ CoverageAreas.init(
     },
 
     state: {
+      type: DataTypes.STRING(50),
+      allowNull: false,
+    },
+    type: {
       type: DataTypes.STRING(50),
       allowNull: false,
     },

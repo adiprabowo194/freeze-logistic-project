@@ -50,16 +50,16 @@ export async function sendEmail(prevState: any, formData: FormData) {
     // ========================
     // RATE LIMIT
     // ========================
-    const allowed = await checkRateLimit(ip);
+    //const allowed = await checkRateLimit(ip);
 
-    if (!allowed) {
-      return {
-        success: false,
-        message: "Too many requests",
-        type: "rate_limit",
-        timestamp: Date.now(),
-      };
-    }
+    // if (!allowed) {
+    // return {
+    // success: false,
+    // message: "Too many requests",
+    // type: "rate_limit",
+    // timestamp: Date.now(),
+    // };
+    // }
 
     // ========================
     // SEND EMAIL (🔥 PENTING: DULUAN)

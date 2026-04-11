@@ -1,4 +1,9 @@
-import { DataTypes, Model, InferAttributes, InferCreationAttributes } from "sequelize";
+import {
+  DataTypes,
+  Model,
+  InferAttributes,
+  InferCreationAttributes,
+} from "sequelize";
 import { sequelize } from "@/lib/sequelize";
 
 class CoverageAreas extends Model<
@@ -8,9 +13,8 @@ class CoverageAreas extends Model<
   declare id: number;
   declare area_code: string;
   declare suburb: string;
-  declare postcode: number;
+  declare postcode: string;
   declare state: string;
-  declare state_code: string;
 }
 
 CoverageAreas.init(
@@ -32,17 +36,12 @@ CoverageAreas.init(
     },
 
     postcode: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: false,
     },
 
     state: {
       type: DataTypes.STRING(50),
-      allowNull: false,
-    },
-
-    state_code: {
-      type: DataTypes.STRING(5),
       allowNull: false,
     },
   },
@@ -51,7 +50,7 @@ CoverageAreas.init(
     modelName: "CoverageAreas",
     tableName: "coverage_areas",
     timestamps: false,
-  }
+  },
 );
 
 export default CoverageAreas;

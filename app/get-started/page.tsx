@@ -213,7 +213,7 @@ export default function Page() {
                   defaultOptions
                   value={selectedSuburb}
                   onChange={(val) => setSelectedSuburb(val as OptionType)}
-                  placeholder="Search suburb..."
+                  placeholder="Type suburb or postcode..."
                   classNamePrefix="react-select"
                   styles={{
                     control: (base, stateSelect) => ({

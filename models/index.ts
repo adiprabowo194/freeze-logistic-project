@@ -6,7 +6,6 @@ import CarrierModel from "./Carriers";
 import ShippingRatesModel from "./ShippingRates";
 
 // 🔥 INIT MODEL DULU
-
 const CoverageAreas = CoverageAreasModel;
 const Quotes = QuotesModel;
 const TrackingHistory = TrackingHistoryModel;
@@ -17,7 +16,7 @@ const ShippingRates = ShippingRatesModel;
 // ================= RELATIONS ================= //
 
 function initRelations() {
-  // 🔥 Quotes -> CoverageAreas
+  // 1. Quotes -> CoverageAreas
   Quotes.belongsTo(CoverageAreas, {
     foreignKey: "suburb_origin",
     targetKey: "area_code",
@@ -30,13 +29,14 @@ function initRelations() {
     as: "destinationArea",
   });
 
-  // 🔥 TrackingHistory -> Quotes
+  // 2. TrackingHistory -> Quotes
   TrackingHistory.belongsTo(Quotes, {
     foreignKey: "connote_no",
     targetKey: "connote_no",
     as: "quote",
   });
-  // Quotes -> QuoteDetails (1 to many)
+
+  // 3. Quotes -> PackageDetails (1 to many)
   Quotes.hasMany(PackageDetails, {
     foreignKey: "connote_no",
     sourceKey: "connote_no",
@@ -48,35 +48,25 @@ function initRelations() {
     targetKey: "connote_no",
     as: "quote",
   });
+
+  // 4. Carriers -> Quotes (Jika Carriers memang merujuk ke Quotes)
   Carriers.belongsTo(Quotes, {
-    foreignKey: "carrier",
-    targetKey: "carrier",
-    as: "carrier",
+    foreignKey: "carrier", // Sesuaikan jika kolom di tabel carriers adalah 'carrier'
+    targetKey: "carrier", // Sesuaikan jika kolom di tabel quotes adalah 'carrier'
+    as: "carrier_quote",
   });
-  // Relasi: Satu Carrier memiliki banyak Shipping Rates
+
+  // 5. Carriers <-> ShippingRates (One to Many)
+  // ✅ Definisi CUKUP SEKALI SAJA
   Carriers.hasMany(ShippingRates, {
-    foreignKey: "carrier_code", // ✅ sesuai field di ShippingRates
-    sourceKey: "carrier", // ✅ field di Carriers
+    foreignKey: "carrier_code", // Kolom di ShippingRates
+    sourceKey: "carrier_code", // Kolom di Carriers
     as: "rates",
   });
 
   ShippingRates.belongsTo(Carriers, {
-    foreignKey: "carrier_code", // ✅ FIX
-    targetKey: "carrier", // ✅ FIX
-    as: "carrier_details",
-  });
-
-  // 1. Carriers -> ShippingRates (1 to many)
-  Carriers.hasMany(ShippingRates, {
-    foreignKey: "carrier_code", // field di ShippingRates
-    sourceKey: "carrier_code", // field di Carriers
-    as: "rates",
-  });
-
-  // 2. ShippingRates -> Carriers (many to 1)
-  ShippingRates.belongsTo(Carriers, {
-    foreignKey: "carrier_code", // field di ShippingRates
-    targetKey: "carrier_code", // field di Carriers
+    foreignKey: "carrier_code", // Kolom di ShippingRates
+    targetKey: "carrier_code", // Kolom di Carriers
     as: "carrier_details",
   });
 }
@@ -84,4 +74,11 @@ function initRelations() {
 // 🔥 JALANKAN SEKALI
 initRelations();
 
-export { CoverageAreas, Quotes, TrackingHistory, Carriers, ShippingRates };
+export {
+  CoverageAreas,
+  Quotes,
+  TrackingHistory,
+  Carriers,
+  ShippingRates,
+  PackageDetails,
+};

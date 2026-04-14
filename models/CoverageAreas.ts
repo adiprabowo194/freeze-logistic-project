@@ -1,60 +1,24 @@
-import {
-  DataTypes,
-  Model,
-  InferAttributes,
-  InferCreationAttributes,
-} from "sequelize";
+import { DataTypes } from "sequelize";
 import { sequelize } from "@/lib/sequelize";
 
-class CoverageAreas extends Model<
-  InferAttributes<CoverageAreas>,
-  InferCreationAttributes<CoverageAreas>
-> {
-  declare id: number;
-  declare area_code: string;
-  declare suburb: string;
-  declare postcode: string;
-  declare type: string;
-  declare state: string;
-}
-
-CoverageAreas.init(
+const CoverageAreas = sequelize.define(
+  "CoverageAreas",
   {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
-
-    area_code: {
-      type: DataTypes.STRING(50),
-      allowNull: false,
-    },
-
-    suburb: {
-      type: DataTypes.STRING(50),
-      allowNull: false,
-    },
-
-    postcode: {
-      type: DataTypes.STRING(50),
-      allowNull: false,
-    },
-
-    state: {
-      type: DataTypes.STRING(50),
-      allowNull: false,
-    },
-    type: {
-      type: DataTypes.STRING(50),
-      allowNull: false,
-    },
+    area_code: DataTypes.STRING(50),
+    suburb: DataTypes.STRING(50),
+    postcode: DataTypes.STRING(50),
+    state: DataTypes.STRING(50),
+    zone_type: DataTypes.STRING(50),
   },
   {
-    sequelize,
-    modelName: "CoverageAreas",
     tableName: "coverage_areas",
     timestamps: false,
+    freezeTableName: true,
   },
 );
 

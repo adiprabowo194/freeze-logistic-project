@@ -23,10 +23,13 @@ export async function GET(req: NextRequest) {
     });
 
     return NextResponse.json(
-      data.map((item) => ({
-        value: item.id,
-        label: `${item.suburb}, ${item.postcode}`, // ✅ fix disini
-      })),
+      data.map((item) => {
+        const raw = item.get(); // Mengambil data objek mentah
+        return {
+          value: raw.id,
+          label: `${raw.suburb}, ${raw.postcode}`,
+        };
+      }),
     );
   } catch (error) {
     console.error(error);
